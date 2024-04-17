@@ -37,12 +37,13 @@ for (let i = 0; i < passwords.length; i++) {
     flag = true;
   }
 
-  // 모두 소문자인지 검사
+  // 모두 대문자인지 검사
   if (!flag && !passwords[i].match(/[a-z]/g)) {
     console.log(`all upper : ${passwords[i]}`)
     flag = true;
   }
 
+  // 모두 소문자인지 검사
   if (!flag && !passwords[i].match(/[A-Z]/g)) {
     console.log(`all lower : ${passwords[i]}`)
     flag = true;
