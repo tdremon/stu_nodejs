@@ -20,13 +20,13 @@ function getNumberOfDroppedPackets(requests: number[][], max_packets: number, ra
             drop += left - max_packets;
             left = max_packets;
         }
-        left = left - rate;
+        left -= rate;
         if (left < 0) {
             left = 0;
         }
         console.log(`time : ${time}, left : ${left}, drop : ${drop}`);
         
-        
+        // 더 이상 request가 없다면 종료. drop된 packet의 개수를 구하는게 목표니
         if (time > sortReq[reqLen-1][0]) {
             break;
         } else {
@@ -36,9 +36,9 @@ function getNumberOfDroppedPackets(requests: number[][], max_packets: number, ra
         // skip
         if (reqIndex < reqLen) {
             let skipCount = sortReq[reqIndex][0] - time;
-            console.log('skipCount : ' + skipCount)
+            // console.log('skipCount : ' + skipCount)
             time += skipCount
-            left = left - (rate * skipCount);
+            left -= rate * skipCount;
             if (left < 0) {
                 left = 0;
             }

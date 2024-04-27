@@ -1,6 +1,6 @@
 
 
-function getStaleServerCount(n: number, log_data: number[][], query: number[], x: number): number[] {
+function getStaleServerCount_test(n: number, log_data: number[][], query: number[], x: number): number[] {
   let result: number[] = [];
   
   for (let i = 0; i < query.length; i++) {

@@ -1,4 +1,5 @@
 // Password validation 성능 이슈!
+// 다양한 password를 받아서 중복을 k개 허락. 그래서 순차적으로 몇개나 허용하는지 ACCEPT, REJECT를 password 길이만큼 저장해서 반환
 function getRegistrationStatus(passwords: string[], k: number): string[] {
     let result: string[] = []
     let count = 0;
@@ -66,7 +67,7 @@ function getRegistrationStatus(passwords: string[], k: number): string[] {
 }
 
 let k = 1;
-let passwords = ["abcd", "abcd", "bbcd", "sex", "bbcd", "abcd"];
+let q01_passwords = ["abcd", "abcd", "bbcd", "sex", "bbcd", "abcd"];
 
-let res = getRegistrationStatus(passwords, k);
-console.log(`res : ${res}`);
+let q01_res = getRegistrationStatus(q01_passwords, k);
+console.log(`res : ${q01_res}`);
